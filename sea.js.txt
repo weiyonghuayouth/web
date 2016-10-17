@@ -1,0 +1,103 @@
+引入sea.js
+配置seajs
+seajs.config({
+  base: "../sea-modules/",
+  alias: {
+    "jquery": "jquery/jquery/1.10.1/jquery.js"
+  }
+})
+
+seajs中，模块的ID大致可分为三种：【相对标识】、【顶级标识】、【普通路径】，
+普通路径包括 “绝对路径”、“根路径”，等。
+【相对标识】指 "./","../" 开头的，如："./OtherModule", "../lib/Base"。./当前../ 上级
+【顶级标识】以文件或目录（可以包含：字母、-、_）开头的，如："app/widget/Select"
+
+★★★base 路径解析规则
+(第 1 层，本身的路径不依赖于任何设置)
+1. 不可使用【顶级标识】，因为顶级标识就是相对于 base 基础路径来解析的，因此 base 本身只能使用【相对标识】或【根路径】等。
+2. base 默认路径为 seajs 的目录，其他情况参见seajs官网，如果不是seajs推荐的源码目录结构，尽量手动设置 base 路径。
+3. 【相对标识】：相对于 当前页面 解析。
+★★★
+
+// 加载入口模块
+seajs.use("../static/hello/src/main")
+
+
+// 所有模块都通过 define 来定义
+define(function(require, exports, module) {
+
+  // 通过 require 引入依赖
+  var $ = require('jquery');
+  var Spinning = require('./spinning');
+
+  // 通过 exports 对外提供接口
+  exports.doSomething = ...
+
+  // 或者通过 module.exports 提供整个接口
+  module.exports = ...
+
+});
+
+
+exports 是一个对象，用来向外提供模块接口。
+
+define(function(require, exports) {
+
+  // 对外提供 foo 属性
+  exports.foo = 'bar';
+
+  // 对外提供 doSomething 方法
+  exports.doSomething = function() {};
+
+});
+
+
+除了给 exports 对象增加成员，还可以使用 return 直接向外提供接口。
+
+define(function(require) {
+
+  // 通过 return 直接提供接口
+  return {
+    foo: 'bar',
+    doSomething: function() {}
+  };
+
+});
+
+如果 return 语句是模块中的唯一代码，还可简化为：
+
+define({
+  foo: 'bar',
+  doSomething: function() {}
+});
+
+
+特别注意：下面这种写法是错误的！
+
+define(function(require, exports) {
+
+  // 错误用法！！!
+  exports = {
+    foo: 'bar',
+    doSomething: function() {}
+  };
+
+});
+
+
+正确的写法是用 return 或者给 module.exports 赋值：
+
+define(function(require, exports, module) {
+
+  // 正确写法
+  module.exports = {
+    foo: 'bar',
+    doSomething: function() {}
+  };
+
+});
+
+提示：exports 仅仅是 module.exports 的一个引用。在 factory 内部给 exports 重新赋值时，并不会改变 module.exports 的值。因此给 exports 赋值是无效的，不能用来更改模块接口。
+
+
+
