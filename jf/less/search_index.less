@@ -1,0 +1,160 @@
+@import "../common/less/top";
+
+@import "../common/less/menu_nav";
+
+@import "../common/less/tree_nav";
+
+body {
+  background-color: #f1f1f1;
+  min-width: 1024px;
+}
+.menu-content {
+  background-color: #fff; margin-bottom: 20px;
+}
+
+.search-tabs {
+
+}
+//tab选项页
+.search-nav {
+  width: 966px; margin: 0 auto;
+  height:46px;
+  li {
+    float: left;
+    height:46px; cursor: pointer;
+    .ver_align();
+    span {
+      display: inline-block; padding-right: 54px;
+      height:26px; border-right:1px solid #e5e5e5; line-height: 26px;
+      font-size: 18px;
+    }
+    //鼠标滑过
+    &:hover {
+      span {
+        color: #0090ff;
+      }
+    }
+    //最后一个
+    &:last-child {
+      span {
+        padding-left:54px;
+        padding-right: 0px;
+        border-right: none;
+      }
+    }
+  }
+  //选中
+  .on {
+    span {
+      color: #0090ff;
+    }
+  }
+}
+//tab选项内容页
+.search-sub {
+  width: 100%; height: 250px; background-color: #349ef0; text-align: center;
+  .ver_align();
+  & > li {
+    width: 1000px;
+  }
+}
+
+//快速搜索
+.simple-search {
+  @simpleHeight:76px;
+  width: 986px; height: @simpleHeight; margin: 0 auto; position: relative;
+  background-color: #fff;
+  input {
+    width: 100%; padding: 0px;
+    height:@simpleHeight;
+    padding-right: 184px; padding-left: 10px;
+    font-size: 18px;
+  }
+  button {
+    position: absolute; right: 0px; top:0px; cursor:pointer;
+    display: block; width: 182px; height: @simpleHeight; border: none; outline: none;
+    background-image:url("../images/search_btn_bg.png");
+  }
+}
+
+.mazy-search {
+  width: 1000px;
+  & > div {
+    float: left;
+       width: 33.33333%; padding: 10px 10px;
+  }
+  .mazy-btns-div {
+    width: 100%;
+    display: block; padding:0px 10px; text-align: right;
+    button {
+      display: inline-block; cursor:pointer;
+      width: 134px; height: 44px; border: none;
+      background-color: #ffaa05;
+      font-size: 26px; color: #fff;
+    }
+
+  }
+}
+
+//下拉框样式修改----------------------------------------------------------
+.ui-selectmenu-button{
+  width:100% !important; height:48px; background-color: #fff;
+  border: none;
+  span.ui-selectmenu-text {
+    font-size: 18px; line-height: 48px; padding: 0px 18px;
+  }
+  span.ui-icon{
+      width: 0px; height: 0px;
+      right: 12px; top: 50%; margin-top: -4px;
+      border-width: 8px;
+      border-style: solid dashed dashed dashed;
+      border-color: #0090ff transparent transparent transparent;
+  }
+}
+.ui-selectmenu-menu {
+  .ui-menu {
+      border: none; overflow: hidden;
+      .ui-menu-item {
+        margin-left: 0px; margin-right: 0px;
+      }
+  }
+}
+//下拉框样式修改----------------------------------------------------------
+
+
+
+.f-lay {
+  .f-lay(0px,60px);
+}
+
+.search-show {
+  width: 1024px; margin: 0 auto; overflow: hidden;
+  .f-lay{
+    width: 100%; cursor: pointer;
+    height: 44px; border-bottom: 1px dotted #dcdcdc;
+    .f-ody,.f-oth {
+      font-size: 14px;
+    }
+    .f-ody {
+      &:before {
+        content: '·';
+        color: #2474bd;
+        margin-right: 2px;
+      }
+    }
+    .f-oth {
+      text-align: right;
+    }
+    &:hover {
+      .f-ody,.f-oth {
+        color:#2474bd ;
+      }
+    }
+  }
+
+}
+
+
+.p-panel {
+  margin-bottom: 20px;
+}

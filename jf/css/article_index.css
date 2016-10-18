@@ -1,0 +1,636 @@
+/*
+	@名称: base
+	@功能: 重设浏览器默认样式
+*/
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+html {
+  height: 100%;
+  color: #545454;
+  background: #fff;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button {
+  margin: 0;
+  padding: 0;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* 要注意表单元素并不继承父级 font 的问题 */
+body,
+button,
+input,
+select,
+textarea {
+  font: 14px/1.5  "Microsoft YaHei","simhei", "\5b8b\4f53", Helvetica, arial, sans-serif;
+}
+input,
+select,
+textarea {
+  font-size: 100%;
+}
+input,
+select,
+label {
+  vertical-align: middle;
+}
+/* 去掉各Table  cell 的边距并让其边重合 */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* IE bug fixed: th 不继承 text-align*/
+th {
+  text-align: inherit;
+}
+/* 去除默认边框 */
+fieldset,
+img {
+  border: 0;
+}
+/* ie6 7 8(q) bug 显示为行内表现 */
+iframe {
+  display: block;
+}
+/* 去掉 firefox 下此元素的边框 */
+abbr,
+acronym {
+  border: 0;
+  font-variant: normal;
+}
+/* 一致的 del 样式 */
+del {
+  text-decoration: line-through;
+}
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+th,
+var {
+  font-style: normal;
+  font-weight: 500;
+}
+/* 去掉列表前的标识, li 会继承 */
+ol,
+ul {
+  list-style: none;
+}
+/* 对齐是排版最重要的因素, 别让什么都居中 */
+caption,
+th {
+  text-align: left;
+}
+/* 来自yahoo, 让标题都自定义, 适应多个系统应用 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: 500;
+}
+q:before,
+q:after {
+  content: '';
+}
+/* 统一上标和下标 */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+a {
+  color: #0088CC;
+  text-decoration: none;
+}
+/* 让链接在 hover 状态下显示下划线 */
+a:hover {
+  text-decoration: none;
+}
+/* 清理浮动 */
+.fn-clear:before,
+.fn-clear:after {
+  content: "";
+  display: table;
+}
+.fn-clear:after {
+  clear: both;
+}
+/* For IE 6/7 (trigger hasLayout) */
+.fn-clear {
+  zoom: 1;
+}
+/* 隐藏, 通常用来与 JS 配合 */
+body .fn-hide {
+  display: none;
+}
+/* 设置内联, 减少浮动带来的bug */
+.fn-left,
+.fn-right {
+  display: inline;
+}
+.fn-left {
+  float: left;
+}
+.fn-right {
+  float: right;
+}
+a:focus {
+  outline: none;
+}
+a {
+  blr: expression(this.onFocus=this.close());
+}
+a {
+  blr: expression(this.onFocus=this.blur());
+}
+/*===================common============================*/
+.fn-wh1010 {
+  width: 1010px;
+}
+.fn-wh1000 {
+  width: 1000px;
+}
+.fn-center {
+  margin: 0 auto;
+}
+.fn-mt30 {
+  margin-top: 30px;
+}
+.fn-mt15 {
+  margin-top: 15px;
+}
+.fn-mr5 {
+  margin-right: 5px;
+}
+.fn-ml5 {
+  margin-left: 5px;
+}
+.fn-ml30 {
+  margin-left: 30px;
+}
+.fn-ml10 {
+  margin-left: 10px;
+}
+.fn-mt10 {
+  margin-top: 10px;
+}
+.fn-mb10 {
+  margin-bottom: 10px;
+}
+.fn-pl5 {
+  padding-left: 5px;
+}
+.fn-pr5 {
+  padding-right: 5px;
+}
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: inherit;
+  font-weight: bold;
+  line-height: 20px;
+  color: inherit;
+  text-rendering: optimizelegibility;
+}
+h1,
+h2,
+h3 {
+  line-height: 1;
+}
+h1 {
+  font-size: 24px;
+}
+h2 {
+  font-size: 18px;
+}
+h3 {
+  font-size: 16px;
+}
+h4 {
+  font-size: 14px;
+}
+h5 {
+  font-size: 12px;
+}
+h6 {
+  font-size: 10px;
+}
+.medias-right .medias-variable {
+  float: right;
+}
+.layout {
+  zoom: 1;
+}
+.layout:after {
+  display: block;
+  content: "";
+  clear: both;
+}
+/*双飞翼（cy-LMR,cy-LR,cy-RL）*/
+.cy-LR,
+.cy-RL,
+.cy-LMR {
+  zoom: 1;
+}
+.cy-LR:after,
+.cy-RL:after,
+.cy-LMR:after {
+  display: block;
+  content: "";
+  clear: both;
+}
+/*L-R*/
+.cyLR-right {
+  float: right;
+  margin-left: -200px;
+  width: 100%;
+  position: relative;
+}
+.cyLR-Rcontent {
+  margin-left: 200px;
+}
+.cyLR-left {
+  float: left;
+  width: 200px;
+  position: relative;
+}
+/*R-L*/
+.cyRL-right {
+  float: right;
+  width: 200px;
+  position: relative;
+}
+.cyRL-left {
+  float: left;
+  margin-right: -200px;
+  width: 100%;
+  position: relative;
+}
+.cyRL-Lcontent {
+  margin-right: 200px;
+  position: relative;
+  z-index: 1;
+}
+/*L-M-R*/
+.cyLMR-left {
+  float: left;
+  margin-left: -100%;
+  width: 200px;
+  position: relative;
+}
+.cyLMR-min {
+  float: left;
+  width: 100%;
+  position: relative;
+}
+.cyLMR-right {
+  float: left;
+  width: 200px;
+  margin-left: -200px;
+  position: relative;
+}
+.cyLMR-content {
+  margin: 0 200px;
+}
+.row,
+.col-lay-row {
+  margin-left: -10px;
+  margin-right: -10px;
+}
+.row:after,
+.col-lay-row:after,
+.row:before,
+.col-lay-row:before {
+  display: table;
+  content: '';
+}
+.row:after,
+.col-lay-row:after {
+  clear: both;
+}
+.col-lay-1, .col-lay-2, .col-lay-3, .col-lay-4, .col-lay-5, .col-lay-6, .col-lay-7, .col-lay-8, .col-lay-9, .col-lay-10, .col-lay-11, .col-lay-12 {
+  position: relative;
+  min-height: 1px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.col-lay-1, .col-lay-2, .col-lay-3, .col-lay-4, .col-lay-5, .col-lay-6, .col-lay-7, .col-lay-8, .col-lay-9, .col-lay-10, .col-lay-11, .col-lay-12 {
+  float: left;
+}
+.col-lay-1 {
+  width: 8.33333333%;
+}
+.col-lay-2 {
+  width: 16.66666667%;
+}
+.col-lay-3 {
+  width: 25%;
+}
+.col-lay-4 {
+  width: 33.33333333%;
+}
+.col-lay-5 {
+  width: 41.66666667%;
+}
+.col-lay-6 {
+  width: 50%;
+}
+.col-lay-7 {
+  width: 58.33333333%;
+}
+.col-lay-8 {
+  width: 66.66666667%;
+}
+.col-lay-9 {
+  width: 75%;
+}
+.col-lay-10 {
+  width: 83.33333333%;
+}
+.col-lay-11 {
+  width: 91.66666667%;
+}
+.col-lay-12 {
+  width: 100%;
+}
+.p-panel {
+  background-color: #fff;
+  padding: 0px 12px;
+}
+.p-panel .p-heading {
+  padding: 12px 0px;
+  border-bottom: 1px solid #2474bd;
+}
+.p-panel .p-heading .p-title {
+  font-size: 16px;
+  border-left: 4px solid #eea821;
+  padding-left: 10px;
+  font-weight: bold;
+}
+.p-panel .p-body {
+  padding: 8px 0px;
+}
+.fade {
+  opacity: 0;
+  -webkit-transition: opacity .15s linear;
+  -o-transition: opacity .15s linear;
+  transition: opacity 0.15s linear;
+}
+.tooltip {
+  position: absolute;
+  z-index: 1070;
+  display: block;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: left;
+  text-align: start;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  letter-spacing: normal;
+  word-break: normal;
+  word-spacing: normal;
+  word-wrap: normal;
+  white-space: normal;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  line-break: auto;
+}
+.tooltip-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+}
+.tooltip.in {
+  filter: alpha(opacity=90);
+  opacity: 0.9;
+}
+.tooltip.bottom {
+  padding: 5px 0;
+  margin-top: 3px;
+}
+.tooltip.bottom .tooltip-arrow {
+  top: 0;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 0 5px 5px;
+  border-bottom-color: #1097ff;
+}
+.tooltip-inner {
+  max-width: 200px;
+  padding: 3px 8px;
+  color: #fff;
+  text-align: center;
+  background-color: #1097ff;
+  border-radius: 4px;
+}
+.article-top {
+  height: 58px;
+  border-bottom: 1px solid #aaa;
+  padding-right: 20px;
+  text-align: right;
+}
+.article-top:before {
+  content: '';
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+}
+.article-top > * {
+  display: inline-block;
+  vertical-align: middle;
+}
+.article-top .search-form {
+  position: relative;
+  width: 280px;
+  text-align: left;
+  border: 1px solid #a4a4a4;
+}
+.article-top .search-form input {
+  border: none;
+  background-color: #fff;
+  width: 100%;
+  height: 34px;
+  padding-right: -28px;
+  padding-left: 4px;
+  outline: none;
+}
+.article-top .search-form .submit {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  cursor: pointer;
+  background-color: #fff;
+  border: none;
+  width: 34px;
+  height: 34px;
+  outline: none;
+}
+.article-top .search-form .submit:before {
+  content: '';
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+}
+.article-top .search-form .submit > * {
+  display: inline-block;
+  vertical-align: middle;
+}
+.article-top .search-form .submit i {
+  font-size: 14px;
+}
+.article-top .search-form .submit {
+  border-left: 1px solid #a4a4a4;
+}
+.article-tools {
+  height: 68px;
+  background-color: #f4f4f4;
+}
+.tools-content {
+  width: 60%;
+  margin: 0 auto;
+  overflow: hidden;
+  padding-top: 20px;
+}
+.tools-left {
+  float: left;
+}
+.tools-left .btn {
+  cursor: pointer;
+  width: 86px;
+  height: 28px;
+  border: 1px solid #0090ff;
+  background-color: transparent;
+  color: #0090ff;
+}
+.tools-left .btn:hover {
+  color: #fff;
+  background-color: #0090ff;
+}
+.tools-left .tools-search-menu {
+  width: 200px;
+  float: left;
+  margin-right: 12px;
+}
+.tools-left .ui-selectmenu-button {
+  width: 100% !important;
+  height: 26px;
+  background-color: #fcfcfc;
+  border: 1px solid #b7b7b7;
+  border-radius: 0px;
+  outline: none;
+}
+.tools-left .ui-selectmenu-button span.ui-selectmenu-text {
+  font-size: 14px;
+  line-height: 26px;
+  padding: 0px 4px;
+}
+.tools-left .ui-selectmenu-button span.ui-icon {
+  width: 0px;
+  height: 0px;
+  right: 6px;
+  top: 50%;
+  margin-top: -2px;
+  border-width: 4px;
+  border-style: solid dashed dashed dashed;
+  border-color: #b7b7b7 transparent transparent transparent;
+}
+.tools-left .ui-selectmenu-menu .ui-menu {
+  border: none;
+  overflow: hidden;
+}
+.tools-left .ui-selectmenu-menu .ui-menu .ui-menu-item {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.tools-bar {
+  float: right;
+}
+.tools-bar li {
+  float: left;
+  cursor: pointer;
+  margin-right: 12px;
+}
+.tools-bar li:hover i {
+  color: #1097ff;
+}
+.tools-bar li i {
+  font-size: 20px;
+}
+.article-contant .col-lay-row {
+  width: 60%;
+  margin: 0 auto;
+}
+.article-contant .col-lay-row .left {
+  background-color: #fff;
+}
+.article-contant .col-lay-row .right {
+  background-color: #f4f4f4;
+  min-height: 500px;
+  border-left: 1px solid #8bbcfc;
+}

@@ -1,0 +1,40 @@
+
+@menuBarHeight:52px;
+
+//菜单nav
+.menu-nav {
+    width: 100%; background: #eee; min-width: 1024px; text-align: center;
+}
+
+.menu-navUl {
+    display: inline-table; width:700px; height: 52px; overflow: hidden;
+    & > li {
+        display: table-cell; vertical-align: middle; cursor: pointer;
+        a {
+            display: inline-block; width: 100%;
+            border-right: 1px solid #e5e5e5;
+            font-size:18px; color: #000;
+            &:hover{
+                text-decoration: none;
+            }
+        }
+        &:hover {
+            border-bottom: 4px solid #0090ff;
+            a {
+                color:#0090ff;
+            }
+        }
+    }
+    .on {
+        border-bottom: 4px solid #0090ff;
+        a {
+            color:#0090ff;
+        }
+    }
+
+}
+.menu-navUl-3 {
+    & > li {
+        width: 33.333333333%;
+    }
+}

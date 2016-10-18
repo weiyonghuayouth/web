@@ -1,0 +1,98 @@
+<div class="addTopic">
+    <div class="lay-table" style="height: 400px;">
+            <div class="f-lay">
+                <div class="f-opt">所属专题：</div>
+                <div class="f-ody">
+                    <select id ="select_subject_groupId" name="groupId" class="form-control">
+                        <script id="select_subject_groupId_tpl" type="text/html">
+                            {{each subjectgroup as value}}
+                            <option value="{{value.id}}">{{value.name}}</option>
+                            {{/each}}
+                        </script>
+                    </select>
+                </div>
+            </div>
+
+            <div class="f-lay">
+                <div class="f-opt">专题名称：</div>
+                <div class="f-ody"><input type="text" id="es-name" class="form-control"/></div>
+            </div>
+            <div class="f-lay">
+                <div class="f-opt">查询库：</div>
+                <div class="f-ody"><input type="text" id ="es-index-id" name="esIndex" class="form-control" value="webdb_lzh,webdb_len"/></div>
+            </div>
+
+            <div class="f-lay">
+                <div class="f-opt">搜索类型：</div>
+                <div class="f-ody">
+                    <div class="checkbox">
+                        <label><input id = "es_seerch_type1" type="checkbox" value="1" checked>标题</label>
+                        <label><input  id = "es_seerch_type2" type="checkbox" value="2" checked>内容</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="f-lay">
+                <div class="f-opt">准确级别：</div>
+                <div class="f-ody">
+                    <select id="es-level">
+                        <option value="1" selected="selected">按天</option>
+                        <option value="2">12小时</option>
+                        <option value="3">6小时</option>
+                        <option value="4">3小时</option>
+                        <option value="5">1小时</option>
+                        <option value="6">实时</option>
+                    </select>
+                </div>
+            </div>
+
+
+            <div class="f-lay">
+                <div class="f-opt">标题和内容关系：</div>
+                <div class="f-ody">
+                    <div class="checkbox" style="margin-top: 0px;margin-bottom:0px">
+                        <label style="position: relative;"><input type="radio" id = "trv_or" value="true" name="isOr" checked style="position: absolute;top: 1px; left: 2px;">或者</label>
+                        <label style="position: relative;"><input type="radio" id = "trv_and" value="false" name="isOr" style="position: absolute;top: 1px; left: 6px;">并且</label>
+                    </div>
+                </div>
+            </div>
+        <div class="f-lay">
+            <div class="f-opt">是否发布到app：</div>
+            <div class="f-ody">
+                <div class="checkbox" style="margin-top: 10px;margin-bottom:10px">
+                    <label style="position: relative;"><input type="radio" id = "PutApp" value="1" name="isnoapp" checked style="position: absolute;top: 1px; left: 2px;">是</label>
+                    <label style="position: relative;"><input type="radio" id = "PutApp-no" value="0" name="isnoapp" style="position: absolute;top: 1px; left: 6px;">否</label>
+                </div>
+            </div>
+        </div>
+            <div class="f-lay valign-center">
+                <div class="f-opt">标题匹配规则：</div>
+                <div class="f-ody"><textarea rows="5" id="titleMatchRegex" class="form-control"></textarea></div>
+            </div>
+            <div class="f-lay valign-center">
+                <div class="f-opt">标题排除规则：</div>
+                <div class="f-ody"><textarea rows="5" id="titleNoMatchRegex" class="form-control"></textarea></div>
+            </div>
+            <div class="f-lay valign-center">
+                <div class="f-opt">内容匹配规则：</div>
+                <div class="f-ody"><textarea rows="5" id="contextMatchRegex" class="form-control"></textarea></div>
+            </div>
+            <div class="f-lay valign-center">
+                <div class="f-opt">内容排除规则：</div>
+                <div class="f-ody"><textarea rows="5" id="contextNoMatchRegex" class="form-control"></textarea></div>
+            </div>
+    </div>
+
+    <div class="addTopic_btns">
+        <button type="button" onclick="topic_edit(true,'');" class="ui-btn" onclick="">确定</button>
+        <button type="button" onclick="layer.closeAll();" class="ui-btn">关闭</button>
+    </div>
+
+</div>
+
+<script>
+    var historyHtml = template("select_subject_groupId_tpl", JSON.parse(getXCookie2("USER_GROUP_LIST")));
+
+    $("#select_subject_groupId").html(historyHtml);
+
+</script>

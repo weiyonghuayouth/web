@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>全球互联网信息情报监测平台</title>
+			<!--<link rel="shortcut icon" href="/images/LOGO.png"/>-->
+			<link href="/common/css/font-awesome.min.css" rel="stylesheet">
+			<link href="/css/login_index.css" rel="stylesheet" />
+
+			<script type="text/javascript" src="/common/js/jquery.min.js"></script>
+			<script type="text/javascript" src="/common/plugins/jmm/md5.js"></script>
+			<script type="text/javascript" src="/common/js/map.js"></script>
+			<script type="text/javascript" src="/common/js/common.js"></script>
+			<script type="text/javascript" src="/js/login/login.js"></script>
+	</head>
+	<body>
+
+
+	<div class="ajaxHtml" url="/common/htmls/jftop.html" id="jf-top"></div>
+	<div class="login-div">
+		<!--<div class="login-welcome"><img src="/images/login_index_welcome.png"/></div>-->
+		<div class="login-content">
+				<div class="login-form" id="login-form">
+					<dl>
+						<dt>用户：</dt>
+						<dd>
+							<img src="/images/user-name.png" />
+
+							<input type="text" name="code" autocomplete="off" style="line-height: 40px;"/>
+						</dd>
+						<dd class="error-userName" style="height: 20px;color: red;"></dd>
+					</dl>
+					<dl>
+						<dt>密码：</dt>
+						<dd>
+							<img src="/images/user-password.png" />
+							<input type="password" autocomplete="off" name="password" style="line-height: 40px;" />
+						</dd>
+						<dd class="error-password" style="height: 20px;color: red;"></dd>
+						<dd class="initial-password" style="height: 20px;color: red;display: none;"></dd>
+					</dl>
+					<dl class="login-yzm">
+						<dt>动态码：</dt>
+						<dd>
+							<img src="/images/dtm_03.jpg" />
+							<input type="text" name="validateCode"  style="line-height: 40px;color: #0b82f9;" placeholder="请输入动态码"/>
+							<!--<img id="loginImg" />-->
+							<!--<a href="javascript:void(0);"id="click-img"><span>看不清？<br><span style="color: #0b82f9;">换一张</span></span></a>-->
+						</dd>
+						<dd class="error-reCaptcha" style="height: 20px;color: red;"></dd>
+					</dl>
+				</div>
+				<div class="login-btns">
+					<a href="javascript:void(0);" style="display: none;">登录失败？忘记密码？</a>
+					<button type="button" class="ui-btn" id="loginBtn">登   录</button>
+				</div>
+
+		</div>
+	</div>
+
+<!--<div class="bottom-support" style="position: fixed; bottom: 0; left: 0; height: 25px; text-align: right;width: 100%;padding-right: 10px; background: #fff;">技术支持:广州掘真信息技术有限公司</div>-->
+	</body>
+
+</html>

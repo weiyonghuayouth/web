@@ -1,0 +1,67 @@
+@import "common";
+
+.jf-top(){
+    .jf-top {
+        min-width: 1024px;
+        width:100%; padding-left: 64px; padding-right: 10px;
+        background-color: #fff;
+        overflow: hidden;
+    }
+    .jf-top-title {
+        float: left;
+        height: @topHeight;
+        color: @topColor;
+        .ver_align();
+    }
+
+}
+
+
+@topHeight:70px;
+@topColor:#0e88c7;
+
+.jf-top {
+    min-width: 1024px;
+    width:100%; padding-left: 64px; padding-right: 10px;
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+    overflow: hidden;
+    position: relative;  z-index: 99;
+}
+.jf-top-title {
+    float: left;
+    font-size: 24px;
+    height: @topHeight;
+    color: @topColor;
+    .ver_align();
+}
+.jf-top-bar {
+    float: right;
+    height: @topHeight;
+    .ver_align();
+    ul {
+        overflow: hidden;
+        li {
+            float: left;
+            color: @topColor;
+            //border-right: 1px solid @topColor;
+            a {
+                font-size: 16px;
+                color: @topColor;
+                margin: 0px 18px;
+            }
+        }
+        .last {
+            border-right: none;
+        }
+    }
+    .user-bar {
+        li {
+            float: left;
+            a {
+                font-size: 14px; color: #0e88c7;
+            }
+        }
+    }
+}
+

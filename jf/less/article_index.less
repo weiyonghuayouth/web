@@ -1,0 +1,99 @@
+@import "../common/less/common";
+
+.article-top {
+   height: 58px; border-bottom: 1px solid #aaa; padding-right: 20px; text-align: right;
+  .ver_align();
+  .search-form{
+    .simple-search(34px,34px);
+    width:280px; text-align: left;
+    border: 1px solid #a4a4a4;
+    .submit {
+      border-left: 1px solid #a4a4a4;
+    }
+
+  }
+}
+
+
+
+
+
+.article-tools {
+  height: 68px; background-color: #f4f4f4;
+}
+
+.tools-content {
+  width: 60%; margin: 0 auto; overflow: hidden; padding-top: 20px;
+}
+.tools-left {
+   float: left;
+  .btn {
+    cursor: pointer;
+    width: 86px;
+    height:28px;
+    border: 1px solid #0090ff;
+    background-color: transparent;
+    color: #0090ff;
+    &:hover {
+      color: #fff;
+      background-color: #0090ff;
+    }
+  }
+  .tools-search-menu {
+    width: 200px; float:left; margin-right: 12px;
+  }
+
+  .ui-selectmenu-button{
+    width:100% !important; height:26px; background-color:#fcfcfc; border: 1px solid #b7b7b7; border-radius: 0px; outline: none;
+    span.ui-selectmenu-text {
+      font-size: 14px; line-height: 26px; padding: 0px 4px;
+    }
+    span.ui-icon{
+      width: 0px; height: 0px;
+      right: 6px; top: 50%; margin-top: -2px;
+      border-width: 4px;
+      border-style: solid dashed dashed dashed;
+      border-color: #b7b7b7 transparent transparent transparent;
+    }
+  }
+  .ui-selectmenu-menu {
+    .ui-menu {
+      border: none; overflow: hidden;
+      .ui-menu-item {
+        margin-left: 0px; margin-right: 0px;
+      }
+    }
+  }
+
+
+}
+.tools-bar {
+  float: right;
+  li{
+    float: left; cursor: pointer; margin-right: 12px;
+    &:hover {
+      i {
+        color: #1097ff;
+      }
+    }
+    i {
+      font-size: 20px;
+    }
+  }
+}
+
+
+
+
+.article-contant {
+  .col-lay-row {
+    width: 60%; margin: 0 auto;
+    .left {
+      background-color: #fff;
+    }
+    .right {
+      background-color: #f4f4f4; min-height: 500px; border-left:1px solid #8bbcfc;
+    }
+  }
+}
+

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link href="/common/plugins/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet"/>
+    <script type="text/javascript" src="/common/js/date.js"></script>
+    <script type="text/javascript" src="/common/plugins/laydate/laydate.js"></script>
+    <script type="text/javascript" src="/common/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/common/js/template.js"></script>
+    <script type="text/javascript" src="/common/js/echarts.simple.min.js"></script>
+    <style>
+        .Statistics-wrap {
+            margin: 0 auto;
+            width: 700px;
+            height: 600px;
+            padding: 20px;
+        }
+
+        .Statistics-top {
+            text-align: center;
+        }
+
+        .Statistics-box {
+
+        }
+
+        .Statistics-box, .Statistics-nav, .Statistics-bot {
+            overflow: hidden;
+            margin-bottom: 0px;
+        }
+
+        .Statistics-nav li {
+            border: 1px solid #b1d2ec;
+            float: left;
+            font-size: 16px;
+            list-style: outside none none;
+            margin-top: 30px;
+            padding: 5px;
+            text-align: center;
+            width: 120px;
+            border-right: none;
+        }
+
+        .Statistics-nav li:last-child {
+            border-right: 1px solid #b1d2ec;
+        }
+
+        .Statistics-box li {
+            border: 1px solid #b1d2ec;
+            border-top: none;
+            float: left;
+            font-size: 15px;
+            height: 28px;
+            line-height: 28px;
+            list-style: outside none none;
+            padding: 0 5px;
+            text-align: right;
+            width: 120px;
+            border-right: none;
+        }
+
+        .Statistics-box li:last-child {
+            border-right: 1px solid #b1d2ec;
+        }
+
+        .Statistics-bot li {
+            border: 1px solid #b1d2ec;
+            float: left;
+            font-size: 15px;
+            list-style: outside none none;
+            padding: 0 5px;
+            height: 28px;
+            line-height: 28px;
+            text-align: right;
+            width: 120px;
+            border-right: none;
+            border-top: none;
+        }
+
+        .Statistics-bot li:last-child {
+            border-right: 1px solid #b1d2ec;
+        }
+        #MyEcharts{
+            width: 100%;
+            height:500px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+<div class="Statistics-wrap">
+    <div class="Statistics-top">
+        开始时间：<input type="text" onclick="laydate()" class="laydate-icon filter-startDate startTime">
+        结束时间：<input type="text" onclick="laydate()" class="laydate-icon filter-startDate endTime">
+        <button id="Statistics-Submit" onclick="Statistics()">查询</button>
+        <button id="Statistics-export" onclick="Export()">导出</button>
+    </div>
+    <ul class="Statistics-nav">
+        <li>日期</li>
+        <li>处理数</li>
+        <li>下载数</li>
+        <li>修改数</li>
+        <li>新增数</li>
+    </ul>
+    <div id="Statistics-box-w">
+        <script id="Statistics-box" type="text/html">
+            {{each datas as value index}}
+            <ul class="Statistics-box">
+                <li style="text-align: center"><span>{{value.date}}</span></li>
+                <li><span>{{value.handleNum}}</span></li>
+                <li><span>{{value.downloadNum}}</span></li>
+                <li><span>{{value.modifyNum}}</span></li>
+                <li><span>{{value.newNum}}</span></li>
+            </ul>
+            {{/each}}
+        </script>
+    </div>
+    <ul class="Statistics-bot">
+        <li style="text-align: center;font-size: 16px;">统计</li>
+        <li class="handleNum"></li>
+        <li class="downloadNum"></li>
+        <li class="modifyNum"></li>
+        <li class="newNum"></li>
+    </ul>
+    <div id="MyEcharts">
+
+    </div>
+</div>
+<script>
+    //时间补0
+    function p(s) {
+        return s < 10 ? '0' + s: s;
+    }
+    var myDate=new Date();
+    //今天
+    var dateValAn = myDate.getFullYear() + "-" + p((myDate.getMonth()+1)) + "-" + p(myDate.getDate());
+    myDate.setMonth(myDate.getMonth()-6);
+    //半年
+    var dateValSt= myDate.getFullYear() + "-" + p((myDate.getMonth()+1)) + "-" + p(myDate.getDate());
+    $(".startTime").val(dateValSt);
+    $(".endTime").val(dateValAn);
+        function Statistics() {
+             var inUrl = "/guestshare/monitor/hostDownStatSum.do";
+            //   var inUrl = "/operate/monitor/hostDownStatSum.do"; //本地
+                    var Data = {
+                        startTime: $(".Statistics-top .startTime").val(),
+                        endTime: $(".Statistics-top .endTime").val()
+                    };
+                    $.ajax({
+                        type: "POST",
+                        url: inUrl,
+                        dataType: "json",
+                        async: false,
+                        data: Data,
+                        success: function (msg) {
+                             var MsgData = msg.data;
+                            var obj = {};
+                            obj.datas = [];
+                            var mmdd = [];
+                            var download = [];
+                            var handle = [];
+                            var modify = [];
+                            var newAdd = [];
+                            var downloadNumCount = 0;
+                            var handleNumCount = 0;
+                            var modifyNumCount = 0;
+                            var newNumCount = 0;
+
+                            for (var i = 0, len = MsgData.length; i < len; i++) {
+                                var row = {};
+                                row.date = MsgData[i][0];
+                                row.handleNum = MsgData[i][1];
+                                row.downloadNum = MsgData[i][2];
+                                row.modifyNum = MsgData[i][3];
+                                row.newNum = MsgData[i][4];
+                                obj.datas.push(row);
+
+                                mmdd.push( row.date.substr(5));
+                                download.push(row.downloadNum);
+                                handle.push(row.handleNum);
+                                modify.push(row.modifyNum);
+                                newAdd.push(row.newNum);
+
+                                downloadNumCount += parseInt(row.downloadNum);
+                                handleNumCount += parseInt(row.handleNum);
+                                modifyNumCount += parseInt(row.modifyNum);
+                                newNumCount += parseInt(row.newNum);
+                            }
+
+                            var upmsg = template("Statistics-box", obj);
+                            $("#Statistics-box-w").html(upmsg);
+                            $(".downloadNum").html(downloadNumCount);
+                            $(".handleNum").html(handleNumCount);
+                            $(".modifyNum").html(modifyNumCount);
+                            $(".newNum").html(newNumCount);
+
+                            $("#MyEcharts").empty();
+                            var myChart = echarts.init(document.getElementById('MyEcharts'));
+                            var option = {
+                                title: {
+                                    text: ''
+                                },
+                                tooltip: {
+                                    trigger: 'axis'
+                                },
+                                legend: {
+                                    data:['下载数','处理数','修改数','新增数']
+                                },
+                                grid: {
+                                    left: '3%',
+                                    right: '4%',
+                                    bottom: '3%',
+                                    containLabel: true
+                                },
+                                toolbox: {
+                                    feature: {
+                                        saveAsImage: {iconStyle:{normal:{borderWidth:2}}}
+                                    }
+                                },
+                                xAxis: {
+                                    type: 'category',
+                                    boundaryGap: false,
+                                    data: mmdd
+                                },
+                                yAxis: {
+                                    type: 'value'
+                                },
+                                series: [
+                                    {
+                                        name:'下载数',
+                                        type:'line',
+                                        stack: '总量',
+                                        data:download
+                                    },
+                                    {
+                                        name:'处理数',
+                                        type:'line',
+                                        stack: '总量',
+                                        data:handle
+                                    },
+                                    {
+                                        name:'修改数',
+                                        type:'line',
+                                        stack: '总量',
+                                        data:modify
+                                    },
+                                    {
+                                        name:'新增数',
+                                        type:'line',
+                                        stack: '总量',
+                                        data:newAdd
+                                    }
+                                ]
+                            };
+                            myChart.setOption(option);
+                        },
+                        error: function () {
+                        }
+                    });
+
+                }
+        function Export() {
+            var inUrl = "/guestshare/monitor/hostDownStatSumDown.do";
+            // var inUrl ="/operate/monitor/hostDownStatSumDown.do";//本地
+            var Data = {
+                startTime: $(".Statistics-top .startTime").val(),
+                endTime: $(".Statistics-top .endTime").val()
+            };
+            var form = $("<form>");//定义一个form表单
+            form.attr("style", "display:none");
+            form.attr("target", "");
+            form.attr("method", "post");
+            form.attr("action", inUrl);
+            var input1 = $("<input>");
+            input1.attr("type", "hidden");
+            input1.attr("value", Data);
+            $("body").append(form);//将表单放置在web中
+            form.append(input1);
+            form.submit();//表单提交
+        }
+</script>
+</body>
+</html>

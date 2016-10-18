@@ -1,0 +1,113 @@
+<!--top start -->
+<div id="top" class="jf-top" style="padding: 0;line-height: 70px;">
+
+    <div class="jf-top-title" style="padding-left: 64px;">
+        <div class="top-title-text" >全球互联网信息情报监测平台</div>
+        <!--<div class="top-title-img" style="display: none;"><img src="/images/logo-h.png"></div>-->
+    </div>
+
+    <div class="jf-top-bar" style="padding-right: 10px;line-height: 70px;">
+        <ul>
+            <!--<li><a href="javascript:;">设为首页</a>|</li>-->
+            <!--<li><a href="javascript:;">反馈</a>|</li>-->
+            <!--<li class="last"><a href="javascript:;">帮助</a></li>-->
+        </ul>
+
+        <ul class="user-bar" style="display: none;">
+            <li class="user-name"><a href="javascript:;"></a>|</li>
+            <li class="user-style" style="display: none" ><a href="" target="_blank">系统设置</a>|</li>
+            <li class=""><a href="javascript:;" onclick="UserInformation()">账号信息</a>|</li>
+            <li class="user-password"><a href="javascript:;" id="passwordRevise" onclick="passwordRevise()">修改密码</a>|</li>
+            <li class="last user-exit"><a href="javascript:;">退出</a></li>
+        </ul>
+    </div>
+</div>
+
+<div id="UserInformation" style="display:none;">
+    <script type="text/html" id="UserInformation-tpl">
+    <div style="height: 40px;width:320px;margin:20px auto 0;">
+        <div style="float: left;margin-top: 10px;padding-right: 10px;">用户名：</div>
+        <div style="float: left;padding: 8px 10px;width: 240px; font-size: 16px;">{{data.userName}}</div>
+    </div>
+    <div style="height: 40px;width:320px;margin:10px auto 0;">
+        <div style="float: left;margin-top: 10px;padding-right: 10px;">有效期：</div>
+        <div style="float: left;padding: 8px 10px;width: 240px; font-size: 16px;">{{data.expiryDate}}</div>
+    </div>
+    <div style="height: 40px;width:370px;margin:10px auto 0;">
+        <div style="float: left;margin-top: 10px;padding-right: 10px;">app子账号：</div>
+        <ul style="float: left;padding: 8px 10px;width: 275px; font-size: 16px;">
+            {{each data.subUserList as value}}
+            <li>
+                {{value.mobileNum}}
+                <span style="margin-left: 10px">
+                    状态：
+                    {{if value.state == 0}}无效{{else}}有效{{/if}}
+                </span>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+    </script>
+</div>
+
+<div id="passwordDiv" style="display:none;">
+    <div style="height: 40px;width:320px;margin:20px auto 0;">
+        <div style="float: left;margin-top: 10px;padding-right: 10px;">输入旧密码</div>
+        <input id="oldPassword" type="password" autocomplete="off" style="display:block; float: left;padding: 0px 10px; height: 40px;line-height: 40px; width: 240px; font-size: 16px; box-shadow: none; border: 1px solid rgb(149, 184, 231); border-radius: 5px;">
+    </div>
+    <div style="height: 40px;width:320px;margin:20px auto 0;">
+        <div style="float: left;margin-top: 10px;padding-right: 10px;">输入新密码</div>
+        <input id="newPassword" type="password" autocomplete="off" style="display:block; float: left;padding: 0px 10px; height: 40px;line-height: 40px; width: 240px; font-size: 16px; box-shadow: none; border: 1px solid rgb(149, 184, 231); border-radius: 5px;">
+    </div>
+    <div style="height: 40px;width:320px;margin:20px auto 0;">
+        <div style="float: left;margin-top: 10px;padding-right: 10px;">确认新密码</div>
+        <input id="newPasswordaAgain" type="password" autocomplete="off" style="display:block; float: left;padding: 0px 10px; height: 40px;line-height: 40px; width: 240px; font-size: 16px; box-shadow: none; border: 1px solid rgb(149, 184, 231); border-radius: 5px;">
+    </div>
+    <p id="Passwordmsg" style="color: red;width: 322px; height:20px;margin: 0 auto;"></p>
+</div>
+
+<script>
+    function topLoadfn() {
+        $.ajax({
+            type: "POST",
+            url: URL + 'zh/login/get/session/user.do',
+            cache: false,
+            dataType: "json",
+            success: function (data) {
+               if(data.state == 0 || data.state == -400) {
+                    var dataName = data.data.user.name;
+                    $("#top").find(".jf-top-bar").find("ul").hide();
+                    $("#top").find(".user-bar").find(".user-name a").html(dataName);
+                    $("#top").find(".user-bar").show();
+
+                    // is客户
+                    if(data.data.user.type=='2'){
+                        $("#top").find(".user-bar").find(".user-style").show();
+                        $("#top").find(".user-bar").find(".user-style a").attr("href",URL + "login/juilogin.do");
+                    }
+
+                    // 将USER_ID放到COOKIE中
+                    var userId = data.data.user.userId;
+                    setXCookie2("USER_ID", userId, COOKIE_EXPIRE_DAYS);
+                }
+                if(data.state == -300){
+                $("#top .jf-top-title .top-title-text").hide();
+                $("#top .jf-top-title .top-title-img").show();
+                }
+             
+            },
+            error: function (data) {
+            
+            }
+        })
+    }
+
+    topLoadfn();
+    $(".user-exit").click(function () {
+        logOut();
+    });
+
+
+</script>
+
+<!--top end -->
