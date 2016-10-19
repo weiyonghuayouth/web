@@ -431,9 +431,12 @@ git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Crese
 Public key是填在服务器上的，我们以github为例，如果是别的代码托管网站，或者你自己搭建，原理都一样。打开你的Github账户，Edit YourProfile，然后SSH keys，然后add，然后把putty生成的public key贴进去就行了。
 save private key  保存的是.ppk 文件名的私有key 打开Pageant add 添加就可以
 
-
-
-
+★git pull无法下载代码 是因为你的ssh client的问题，使用ssh链接不上
+解决办法：
+当前项目右键-> TortoiseGit -> Settings -> Network
+SSH client 设置  C:\Program Files\TortoiseGit\bin\TortoisePlink.exe
+改成 C:\Program Files (x86)\Git\bin\ssh.exe
+也就是你的git 的ssh路径
 
 
 
