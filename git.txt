@@ -437,7 +437,7 @@ save private key  保存的是.ppk 文件名的私有key 打开Pageant add 添�
 SSH client 设置  C:\Program Files\TortoiseGit\bin\TortoisePlink.exe
 改成 C:\Program Files (x86)\Git\bin\ssh.exe
 也就是你的git 的ssh路径
-
+★★★注意 默认的路径在c盘，要根据你安装的路径设置才正常，没有ssh.exe 用TortoisePlink.exe
 
 
 
