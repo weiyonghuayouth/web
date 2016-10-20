@@ -1,18 +1,21 @@
+﻿★模块
 
-定义模块 两个参数  1 模板名 2 依赖列表 (相当于setter方法)
+定义模块 两个参数  1 模块名 2 依赖列表 
 
-angular.module('myapp',[]);
+angular.module('myapp',[]);(相当于angular模块的setter方法，用来定义模块的)
 
-ng-app="myapp"
+angular.module('myapp') 相当于angularjs模块的getter方法，用来获取对模块的引用
 
-作用域  视图和控制器之间的胶水
+ng-app="myapp" 视图中绑定
+
+★作用域  视图和控制器之间的胶水
 
 $rootscope 是所有的$scope 对象的最上层 
 $scope不负责处理和操作数据，是视图和html之间的桥梁，视图和控制器的胶水
 
 
 
-控制器 
+★控制器 
 
 就是个函数 
 与其他js 框架的区别，控制器不适合用来执行DOM操作，格式化或数据操作
@@ -24,7 +27,7 @@ $scope.name="wyh"
 ng-controller="mycontroller"
 
 
-表达式
+★表达式
 
 {{name}}
 
