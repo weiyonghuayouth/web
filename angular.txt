@@ -13,7 +13,16 @@ ng-app="myapp" 视图中绑定
 $rootscope 是所有的$scope 对象的最上层 
 $scope不负责处理和操作数据，是视图和html之间的桥梁，视图和控制器的胶水
 
-
+<div ng-app="myApp">
+	<div ng-controller="MyController">
+		<h1>Hello {{ name }}</h1>
+	</div>
+</div>
+angular.module("myApp", [])
+	.controller('MyController',
+	function($scope) {
+	$scope.name = "Ari";
+});
 
 ★控制器 
 
@@ -26,6 +35,36 @@ $scope.name="wyh"
 
 ng-controller="mycontroller"
 
+臃肿的控制器：
+angular.module('myApp', [])
+.controller('MyController', function($scope) {
+   $scope.shouldShowLogin = true;
+   $scope.showLogin = function () {
+     $scope.shouldShowLogin = !$scope.shouldShowLogin;
+    };
+    $scope.clickButton = function() {
+      $('#btn span').html('Clicked');
+    };
+    $scope.onLogin = function(user) {
+       $http({
+       method: 'POST',
+       url: '/login',
+       data: {
+      user: user
+      }
+   }).success(function(data) {
+           // user
+   });
+  };
+});
+简洁的控制器：
+angular.module('myApp', [])
+.controller('MyController', function($scope,UserSrv) {
+	// 内容可以被指令控制
+	$scope.onLogin = function(user) {
+	   UserSrv.runLogin(user);
+	};
+});
 
 ★表达式
 
@@ -35,4 +74,9 @@ ng-controller="mycontroller"
 发生了错误不会抛出异常
 不允许使用任何流程控制功能 如if/eles
 可以接受过滤器和过滤器链
-★
+
+★ng-model 指令绑定了 HTML 表单元素到 scope 变量中。
+
+★过滤器
+
+★表单验证
