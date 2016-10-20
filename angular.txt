@@ -1,21 +1,21 @@
 
-¶¨ÒåÄ£¿é Á½¸ö²ÎÊý  1 Ä£°åÃû 2 ÒÀÀµÁÐ±í (Ïàµ±ÓÚsetter·½·¨)
+å®šä¹‰æ¨¡å— ä¸¤ä¸ªå‚æ•°  1 æ¨¡æ¿å 2 ä¾èµ–åˆ—è¡¨ (ç›¸å½“äºŽsetteræ–¹æ³•)
 
 angular.module('myapp',[]);
 
 ng-app="myapp"
 
-×÷ÓÃÓò  ÊÓÍ¼ºÍ¿ØÖÆÆ÷Ö®¼äµÄ½ºË®
+ä½œç”¨åŸŸ  è§†å›¾å’ŒæŽ§åˆ¶å™¨ä¹‹é—´çš„èƒ¶æ°´
 
-$rootscope ÊÇËùÓÐµÄ$scope ¶ÔÏóµÄ×îÉÏ²ã 
-$scope²»¸ºÔð´¦ÀíºÍ²Ù×÷Êý¾Ý£¬ÊÇÊÓÍ¼ºÍhtmlÖ®¼äµÄÇÅÁº£¬ÊÓÍ¼ºÍ¿ØÖÆÆ÷µÄ½ºË®
+$rootscope æ˜¯æ‰€æœ‰çš„$scope å¯¹è±¡çš„æœ€ä¸Šå±‚ 
+$scopeä¸è´Ÿè´£å¤„ç†å’Œæ“ä½œæ•°æ®ï¼Œæ˜¯è§†å›¾å’Œhtmlä¹‹é—´çš„æ¡¥æ¢ï¼Œè§†å›¾å’ŒæŽ§åˆ¶å™¨çš„èƒ¶æ°´
 
 
 
-¿ØÖÆÆ÷ 
+æŽ§åˆ¶å™¨ 
 
-¾ÍÊÇ¸öº¯Êý 
-ÓëÆäËûjs ¿ò¼ÜµÄÇø±ð£¬¿ØÖÆÆ÷²»ÊÊºÏÓÃÀ´Ö´ÐÐDOM²Ù×÷£¬¸ñÊ½»¯»òÊý¾Ý²Ù×÷
+å°±æ˜¯ä¸ªå‡½æ•° 
+ä¸Žå…¶ä»–js æ¡†æž¶çš„åŒºåˆ«ï¼ŒæŽ§åˆ¶å™¨ä¸é€‚åˆç”¨æ¥æ‰§è¡ŒDOMæ“ä½œï¼Œæ ¼å¼åŒ–æˆ–æ•°æ®æ“ä½œ
 
 angular.module('myapp',[]).controller('mycontroller',function($scope){
 $scope.name="wyh"
@@ -24,11 +24,12 @@ $scope.name="wyh"
 ng-controller="mycontroller"
 
 
-±í´ïÊ½
+è¡¨è¾¾å¼
 
 {{name}}
 
-ËùÓÐ±í´ïÊ½ÔÚÆä×÷ÓÃÓòÄÚ²¿Ö´ÐÐ£¬²¢ÓÐ·ÃÎÊ±¾µØ$scopeµÄÈ¨ÏÞ
-·¢ÉúÁË´íÎó²»»áÅ×³öÒì³£
-²»ÔÊÐíÊ¹ÓÃÈÎºÎÁ÷³Ì¿ØÖÆ¹¦ÄÜ Èçif/eles
-¿ÉÒÔ½ÓÊÜ¹ýÂËÆ÷ºÍ¹ýÂËÆ÷Á´
+æ‰€æœ‰è¡¨è¾¾å¼åœ¨å…¶ä½œç”¨åŸŸå†…éƒ¨æ‰§è¡Œï¼Œå¹¶æœ‰è®¿é—®æœ¬åœ°$scopeçš„æƒé™
+å‘ç”Ÿäº†é”™è¯¯ä¸ä¼šæŠ›å‡ºå¼‚å¸¸
+ä¸å…è®¸ä½¿ç”¨ä»»ä½•æµç¨‹æŽ§åˆ¶åŠŸèƒ½ å¦‚if/eles
+å¯ä»¥æŽ¥å—è¿‡æ»¤å™¨å’Œè¿‡æ»¤å™¨é“¾
+â˜…
