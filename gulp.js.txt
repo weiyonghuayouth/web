@@ -1,133 +1,133 @@
-¡ï¿ª´òÃüÁî¿ì½İ¼ü win+r
+â˜…â˜…å¼€æ‰“å‘½ä»¤å¿«æ·é”® win+r
 
-ctrl+c ½áÊøµ±Ç°ÃüÁî
+ctrl+c ç»“æŸå½“å‰å‘½ä»¤
 
-gulp ÖĞ ÃüÁîºÍÃüÁîÖ®¼äµÄÏÎ½ÓÍ¨³£¾ÍÓÃµÄÊÇpipe¡£
+gulp ä¸­ å‘½ä»¤å’Œå‘½ä»¤ä¹‹é—´çš„è¡”æ¥é€šå¸¸å°±ç”¨çš„æ˜¯pipeã€‚
 
 
-¡ï°²×°node      
+â˜…å®‰è£…node      
 node -v
 npm -v
 
-Éı¼¶node.jsµ½×îĞÂÎÈ¶¨°æ  n stable
-npm update moduleName£º¸üĞÂnodeÄ£¿é
-npm uninstall moudleName£ºĞ¶ÔØnodeÄ£¿é
+å‡çº§node.jsåˆ°æœ€æ–°ç¨³å®šç‰ˆ  n stable
+npm update moduleNameï¼šæ›´æ–°nodeæ¨¡å—
+npm uninstall moudleNameï¼šå¸è½½nodeæ¨¡å—
 
-¡ï°²×°cnpm
+â˜…å®‰è£…cnpm
 
 npm install cnpm -g --registry=https://registry.npm.taobao.org
 
 
-Ö´ĞĞcnpm -v ÏÔÊ¾°æ±¾ºÅ¼´°²×°³É¹¦ 
+æ‰§è¡Œcnpm -v æ˜¾ç¤ºç‰ˆæœ¬å·å³å®‰è£…æˆåŠŸ 
 
 
-¡ïÈ«¾Ö°²×°gulp
+â˜…å…¨å±€å®‰è£…gulp
 
-Ö´ĞĞ cnpm install gulp -g
+æ‰§è¡Œ cnpm install gulp -g
 
-Ö´ĞĞ gulp -v ÏÔÊ¾°æ±¾ºÅ¼´°²×°³É¹¦ 
+æ‰§è¡Œ gulp -v æ˜¾ç¤ºç‰ˆæœ¬å·å³å®‰è£…æˆåŠŸ 
 
 
-¡ïÏîÄ¿ÎÄ¼ş¸ùÄ¿Â¼ĞÂ½¨package.json
-½øÈëÄãµÄÏîÄ¿ÎÄ¼ş
+â˜…é¡¹ç›®æ–‡ä»¶æ ¹ç›®å½•æ–°å»ºpackage.json
+è¿›å…¥ä½ çš„é¡¹ç›®æ–‡ä»¶
 d:
 cd www/myapp
 
-Ö´ĞĞÃüÁî cnpm init À´ĞÂ½¨package.json
+æ‰§è¡Œå‘½ä»¤ cnpm init æ¥æ–°å»ºpackage.json
 
-ÒÀ´ÎÊäÈëĞÅÏ¢
-ÏîÄ¿Ãû³Æ£¬°æ±¾ºÅ£¬ÃèÊöĞÅÏ¢£¬¡£¡£¡£¡£ÆäËûµÄ¿ÉÎª¿Õ
-È·ÈÏ ÊäÈë yes 
+ä¾æ¬¡è¾“å…¥ä¿¡æ¯
+é¡¹ç›®åç§°ï¼Œç‰ˆæœ¬å·ï¼Œæè¿°ä¿¡æ¯ï¼Œã€‚ã€‚ã€‚ã€‚å…¶ä»–çš„å¯ä¸ºç©º
+ç¡®è®¤ è¾“å…¥ yes 
 
-¡ï¼ì²âpackage.jsonÊÇ·ñ³É¹¦ĞÂ½¨
+â˜…æ£€æµ‹package.jsonæ˜¯å¦æˆåŠŸæ–°å»º
 
-²é¿´ÏîÄ¿ÎÄ¼ş¸ùÄ¿Â¼£¬ÊÇ·ñĞÂ½¨package.json£¬ÇÒÄÚÈİÊÇ·ñºÍÄãÖÕ¶ËÖĞÊäÈëµÄÒ»ÖÂ¡£ package.jsonÄÚÈİÈçÏÂ£º
-{   "name": "test",  "version": "1.0.0",  "description": "ÎÒÊÇÃèÊö",  "main": "index.js",  "scripts": {    "test": "echo \"Error: no test specified\" && exit 1"  },  "author": "",  "license": "ISC"}
-×¢£º¿É²»Ê¹ÓÃcnpm init·½Ê½£¬¿ÉÑ¡ÔñÊÖ¶¯´´½¨package.jsonÅäÖÃÎÄ¼ş
+æŸ¥çœ‹é¡¹ç›®æ–‡ä»¶æ ¹ç›®å½•ï¼Œæ˜¯å¦æ–°å»ºpackage.jsonï¼Œä¸”å†…å®¹æ˜¯å¦å’Œä½ ç»ˆç«¯ä¸­è¾“å…¥çš„ä¸€è‡´ã€‚ package.jsonå†…å®¹å¦‚ä¸‹ï¼š
+{   "name": "test",  "version": "1.0.0",  "description": "æˆ‘æ˜¯æè¿°",  "main": "index.js",  "scripts": {    "test": "echo \"Error: no test specified\" && exit 1"  },  "author": "",  "license": "ISC"}
+æ³¨ï¼šå¯ä¸ä½¿ç”¨cnpm initæ–¹å¼ï¼Œå¯é€‰æ‹©æ‰‹åŠ¨åˆ›å»ºpackage.jsoné…ç½®æ–‡ä»¶
 
 
-¡ï±¾µØ°²×°gulp²å¼ş
+â˜…æœ¬åœ°å®‰è£…gulpæ’ä»¶
 
-×¢£ºÈ«¾Ö°²×°gulpÊÇÎªÁËÖ´ĞĞgulpÈÎÎñ£¬±¾µØ°²×°gulpÔòÊÇÎªÁËµ÷ÓÃgulp²å¼şµÄ¹¦ÄÜ
-½øÈëÄãµÄÏîÄ¿ÎÄ¼şÂ·¾¶ÖĞºó£¬Ö´ĞĞcnpm install gulp --save-dev 
+æ³¨ï¼šå…¨å±€å®‰è£…gulpæ˜¯ä¸ºäº†æ‰§è¡Œgulpä»»åŠ¡ï¼Œæœ¬åœ°å®‰è£…gulpåˆ™æ˜¯ä¸ºäº†è°ƒç”¨gulpæ’ä»¶çš„åŠŸèƒ½
+è¿›å…¥ä½ çš„é¡¹ç›®æ–‡ä»¶è·¯å¾„ä¸­åï¼Œæ‰§è¡Œcnpm install gulp --save-dev 
 
-Ê¹ÓÃ¡ªsave-dev£¬½«Í¨Öª¼ÆËã»úÔÚpackage.jsonÖĞÌí¼ÓgulpÒÀÀµ¡£
+ä½¿ç”¨â€”save-devï¼Œå°†é€šçŸ¥è®¡ç®—æœºåœ¨package.jsonä¸­æ·»åŠ gulpä¾èµ–ã€‚
 
-¡ï°²×°²å¼ş 
+â˜…å®‰è£…æ’ä»¶ 
 
-½øÈëÄãµÄÏîÄ¿ÎÄ¼şÂ·¾¶ÖĞºó£¬Ö´ĞĞcnpm install gulp-sass --save-dev£¨ÁĞ×Ó£©
+è¿›å…¥ä½ çš„é¡¹ç›®æ–‡ä»¶è·¯å¾„ä¸­åï¼Œæ‰§è¡Œcnpm install gulp-sass --save-devï¼ˆåˆ—å­ï¼‰
 
-¡ïĞÂ½¨gulpfile.js£¨ÖØÒª£¬ÖØÒª£¬ÖØÒª£©
-gulpfile.jsÊÇgulpµÄÅäÖÃÎÄ¼ş£¬·ÅÓÚ¸ùÄ¿Â¼ÖĞ¡£
+â˜…æ–°å»ºgulpfile.jsï¼ˆé‡è¦ï¼Œé‡è¦ï¼Œé‡è¦ï¼‰
+gulpfile.jsæ˜¯gulpçš„é…ç½®æ–‡ä»¶ï¼Œæ”¾äºæ ¹ç›®å½•ä¸­ã€‚
 
-//gulpfile.js Ê¾ÀıÎÄ¼ş
+//gulpfile.js ç¤ºä¾‹æ–‡ä»¶
 
-//µ¼ÈëÄãËùĞèÒªÓÃµÄ¹¤¾ß°ü require('node_modulesÀï¶ÔÓ¦Ä£¿é')
+//å¯¼å…¥ä½ æ‰€éœ€è¦ç”¨çš„å·¥å…·åŒ… require('node_modulesé‡Œå¯¹åº”æ¨¡å—')
 var gulp = require('gulp'),
     sass = require('gulp-sass');
 
-// scss ÈÎÎñ
+// scss ä»»åŠ¡
 gulp.task('sass',function(){
-  return gulp.src('src/css/test.scss') //»ñÈ¡¸ÃÈÎÎñĞèÒªµÄÎÄ¼ş
-      .pipe( sass() )                  //¸ÃÈÎÎñµ÷ÓÃµÄÄ£¿é
-      .pipe( gulp.dest('src/css') );   //½«ÔÚ src/css ÎÄ¼ş¼ĞÖĞÉú²útest.css
+  return gulp.src('src/css/test.scss') //è·å–è¯¥ä»»åŠ¡éœ€è¦çš„æ–‡ä»¶
+      .pipe( sass() )                  //è¯¥ä»»åŠ¡è°ƒç”¨çš„æ¨¡å—
+      .pipe( gulp.dest('src/css') );   //å°†åœ¨ src/css æ–‡ä»¶å¤¹ä¸­ç”Ÿäº§test.css
 });
 
-// Ä¬ÈÏÈÎÎñ
+// é»˜è®¤ä»»åŠ¡
 gulp.task('default',['sass','watch1']);
 
-//¼àÌıÎÄ¼ş
+//ç›‘å¬æ–‡ä»¶
 gulp.task('watch1',function(){
     return gulp.watch('src/css/test.scss',['sass']);
-    //¼àÌı src/css/test.scss ÎÄ¼ş£¬ĞŞ¸ÄÊ±×Ô¶¯Ö´ĞĞ sass ÈÎÎñ¡£
+    //ç›‘å¬ src/css/test.scss æ–‡ä»¶ï¼Œä¿®æ”¹æ—¶è‡ªåŠ¨æ‰§è¡Œ sass ä»»åŠ¡ã€‚
 });
 
-¡ïÔËĞĞgulp
+â˜…è¿è¡Œgulp
 
-Ö´ĞĞ  gulp ÈÎÎñÃû³Æ ÔËĞĞ¸ÃÈÎÎñ Ê¾Àı£ºgulp sass Ö´ĞĞgulpfile.jsÖĞµÄsassÈÎÎñ 
+æ‰§è¡Œ  gulp ä»»åŠ¡åç§° è¿è¡Œè¯¥ä»»åŠ¡ ç¤ºä¾‹ï¼šgulp sass æ‰§è¡Œgulpfile.jsä¸­çš„sassä»»åŠ¡ 
 
-Ö´ĞĞ  gulp   µ÷ÓÃdefaultÖĞµÄËùÓĞÈÎÎñ 
-
-
-¡ï³£ÓÃ²å¼ş
-
-sassµÄ±àÒë£¨gulp-sass£©
-less±àÒë £¨gulp-less£©
-ÖØÃüÃû£¨gulp-rename£©
-×Ô¶¯Ìí¼ÓcssÇ°×º£¨gulp-autoprefixer£©
-Ñ¹Ëõcss£¨gulp-clean-css£©
-js´úÂëĞ£Ñé£¨gulp-jshint£©
-ºÏ²¢jsÎÄ¼ş£¨gulp-concat£©
-Ñ¹Ëõjs´úÂë£¨gulp-uglify£©
-Ñ¹ËõÍ¼Æ¬£¨gulp-imagemin£©
-×Ô¶¯Ë¢ĞÂÒ³Ãæ£¨gulp-livereload£¬¹È¸èä¯ÀÀÆ÷Ç×²â£¬¹È¸èä¯ÀÀÆ÷Ğè°²×°livereload²å¼ş£©
-×Ô¶¯Ë¢ĞÂÒ³Ãæ£¨browser-sync£©
-Í¼Æ¬»º´æ£¬Ö»ÓĞÍ¼Æ¬Ìæ»»ÁË²ÅÑ¹Ëõ£¨gulp-cache£©
-¸ü¸ÄÌáĞÑ£¨gulp-notify£©
-£¨gulp-useref£©»á½«¶à¸öÎÄ¼şÆ´½Ó³Éµ¥Ò»ÎÄ¼ş£¬²¢Êä³öµ½ÏàÓ¦Ä¿Â¼¡£
+æ‰§è¡Œ  gulp   è°ƒç”¨defaultä¸­çš„æ‰€æœ‰ä»»åŠ¡ 
 
 
-¡ïNodeÖĞµÄÍ¨Åä·û
+â˜…å¸¸ç”¨æ’ä»¶
 
-*.scss £º * ºÅÆ¥Åäµ±Ç°Ä¿Â¼ÈÎÒâÎÄ¼ş£¬ËùÒÔÕâÀï *.scss Æ¥Åäµ±Ç°Ä¿Â¼ÏÂËùÓĞscssÎÄ¼ş
-**/*.scss £ºÆ¥Åäµ±Ç°Ä¿Â¼¼°Æä×ÓÄ¿Â¼ÏÂµÄËùÓĞscssÎÄ¼ş¡£
-!not-me.scss £º£¡ºÅÒÆ³ıÆ¥ÅäµÄÎÄ¼ş£¬ÕâÀï½«ÒÆ³ınot-me.scss
-*.+(scss|sass) £º+ºÅºóÃæ»á¸ú×ÅÔ²À¨ºÅ£¬ÀïÃæµÄÔªËØÓÃ|·Ö¸î£¬Æ¥Åä¶à¸öÑ¡Ïî¡£ÕâÀï½«Æ¥ÅäscssºÍsassÎÄ¼ş¡£
+sassçš„ç¼–è¯‘ï¼ˆgulp-sassï¼‰
+lessç¼–è¯‘ ï¼ˆgulp-lessï¼‰
+é‡å‘½åï¼ˆgulp-renameï¼‰
+è‡ªåŠ¨æ·»åŠ csså‰ç¼€ï¼ˆgulp-autoprefixerï¼‰
+å‹ç¼©cssï¼ˆgulp-clean-cssï¼‰
+jsä»£ç æ ¡éªŒï¼ˆgulp-jshintï¼‰
+åˆå¹¶jsæ–‡ä»¶ï¼ˆgulp-concatï¼‰
+å‹ç¼©jsä»£ç ï¼ˆgulp-uglifyï¼‰
+å‹ç¼©å›¾ç‰‡ï¼ˆgulp-imageminï¼‰
+è‡ªåŠ¨åˆ·æ–°é¡µé¢ï¼ˆgulp-livereloadï¼Œè°·æ­Œæµè§ˆå™¨äº²æµ‹ï¼Œè°·æ­Œæµè§ˆå™¨éœ€å®‰è£…livereloadæ’ä»¶ï¼‰
+è‡ªåŠ¨åˆ·æ–°é¡µé¢ï¼ˆbrowser-syncï¼‰
+å›¾ç‰‡ç¼“å­˜ï¼Œåªæœ‰å›¾ç‰‡æ›¿æ¢äº†æ‰å‹ç¼©ï¼ˆgulp-cacheï¼‰
+æ›´æ”¹æé†’ï¼ˆgulp-notifyï¼‰
+ï¼ˆgulp-userefï¼‰ä¼šå°†å¤šä¸ªæ–‡ä»¶æ‹¼æ¥æˆå•ä¸€æ–‡ä»¶ï¼Œå¹¶è¾“å‡ºåˆ°ç›¸åº”ç›®å½•ã€‚
 
-¡ï5¸ögulpÃüÁî
-Gulp·½·¨£¬src,dest£¬½ø£¬³ö
 
-gulp.task(name, fn)Õâ¸öÄãÓ¦¾­¼û¹ıÁË
+â˜…Nodeä¸­çš„é€šé…ç¬¦
 
-gulp.run(tasks...)¾¡¿ÉÄÜ¶àµÄ²¢ĞĞÔËĞĞ¶à¸ötask
+*.scss ï¼š * å·åŒ¹é…å½“å‰ç›®å½•ä»»æ„æ–‡ä»¶ï¼Œæ‰€ä»¥è¿™é‡Œ *.scss åŒ¹é…å½“å‰ç›®å½•ä¸‹æ‰€æœ‰scssæ–‡ä»¶
+**/*.scss ï¼šåŒ¹é…å½“å‰ç›®å½•åŠå…¶å­ç›®å½•ä¸‹çš„æ‰€æœ‰scssæ–‡ä»¶ã€‚
+!not-me.scss ï¼šï¼å·ç§»é™¤åŒ¹é…çš„æ–‡ä»¶ï¼Œè¿™é‡Œå°†ç§»é™¤not-me.scss
+*.+(scss|sass) ï¼š+å·åé¢ä¼šè·Ÿç€åœ†æ‹¬å·ï¼Œé‡Œé¢çš„å…ƒç´ ç”¨|åˆ†å‰²ï¼ŒåŒ¹é…å¤šä¸ªé€‰é¡¹ã€‚è¿™é‡Œå°†åŒ¹é…scsså’Œsassæ–‡ä»¶ã€‚
 
-gulp.watch(glob, fn)µ±globÄÚÈİ·¢Éú¸Ä±äÊ±£¬Ö´ĞĞfn
+â˜…5ä¸ªgulpå‘½ä»¤
+Gulpæ–¹æ³•ï¼Œsrc,destï¼Œè¿›ï¼Œå‡º
 
-gulp.src(glob)·µ»ØÒ»¸ö¿É¶ÁµÄstream
+gulp.task(name, fn)è¿™ä¸ªä½ åº”ç»è§è¿‡äº†
 
-gulp.dest(glob)·µ»ØÒ»¸ö¿ÉĞ´µÄstream
+gulp.run(tasks...)å°½å¯èƒ½å¤šçš„å¹¶è¡Œè¿è¡Œå¤šä¸ªtask
 
-¡ïÈÎÎñÖ®Ç°ÏÈÖ´ĞĞµÄÈÎÎñ['browserSync', 'sass'] µ«»áÍ¬Ê±Ö´ĞĞ
+gulp.watch(glob, fn)å½“globå†…å®¹å‘ç”Ÿæ”¹å˜æ—¶ï¼Œæ‰§è¡Œfn
+
+gulp.src(glob)è¿”å›ä¸€ä¸ªå¯è¯»çš„stream
+
+gulp.dest(glob)è¿”å›ä¸€ä¸ªå¯å†™çš„stream
+
+â˜…ä»»åŠ¡ä¹‹å‰å…ˆæ‰§è¡Œçš„ä»»åŠ¡['browserSync', 'sass'] ä½†ä¼šåŒæ—¶æ‰§è¡Œ
 
 gulp.task('watch', ['browserSync', 'sass'], function (){
   gulp.watch('app/scss/**/*.scss', ['sass']);
@@ -135,20 +135,20 @@ gulp.task('watch', ['browserSync', 'sass'], function (){
 })
 
 
-¡ï°´Ë³ĞòÖ´ĞĞ RunSequence Ò²¿ÉÒÔÍ¬Ê±Ö´ĞĞ
-Ë³Ğò
+â˜…æŒ‰é¡ºåºæ‰§è¡Œ RunSequence ä¹Ÿå¯ä»¥åŒæ—¶æ‰§è¡Œ
+é¡ºåº
 gulp.task('build', function (callback) {
   runSequence('clean:dist',
     ['sass', 'useref', 'images', 'fonts'],
     callback
   )
 })
-Í¬²½
+åŒæ­¥
 gulp.task('task-name', function(callback) {
   runSequence('task-one', ['tasks','two','run','in','parallel'], 'task-three', callback);
 });
 
-¡ï//¿ª·¢ÈÎÎñÓÃ·¨ Ä¬ÈÏÖ´ĞĞ gulp
+â˜…//å¼€å‘ä»»åŠ¡ç”¨æ³• é»˜è®¤æ‰§è¡Œ gulp
 gulp.task('default', function (callback) {
   runSequence(['less','browserSync', 'watch'],
     callback
