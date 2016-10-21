@@ -1,5 +1,5 @@
 ﻿★模块
-
+一个页面只有一个ng-app  特殊方法可以多个
 定义模块 两个参数  1 模块名 2 依赖列表 
 
 angular.module('myapp',[]);(相当于angular模块的setter方法，用来定义模块的)
